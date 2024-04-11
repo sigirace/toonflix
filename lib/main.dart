@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:toonflix/screens/home_screen.dart';
 
 void main() {
   runApp(const App());
@@ -23,31 +24,17 @@ class _AppState extends State<App> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        backgroundColor: const Color(0xFFF4EDDB),
-        body: Center(
-            child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text('Click Count',
-                style: TextStyle(
-                  fontSize: 30,
-                )),
-            for (var n in numbers)
-              Text('$n',
-                  style: const TextStyle(
-                    fontSize: 30,
-                  )),
-            IconButton(
-              onPressed: onClicked,
-              icon: const Icon(
-                Icons.add_box_rounded,
-                size: 30,
-              ),
-            )
-          ],
-        )),
-      ),
-    );
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSwatch(
+            backgroundColor: const Color(0xFFE7626C),
+          ),
+          textTheme: const TextTheme(
+            displayLarge: TextStyle(
+              color: Color(0xFF232B55),
+            ),
+          ),
+          cardColor: const Color(0xFFF4EDDB),
+        ),
+        home: const HomeScreen());
   }
 }
