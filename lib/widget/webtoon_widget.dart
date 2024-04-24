@@ -16,7 +16,8 @@ class Webtoon extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                  builder: (context) => DetailScreen(webtoon: webtoon)),
+                builder: (context) => DetailScreen(webtoon: webtoon),
+              ),
             );
           },
           child: Hero(
@@ -25,14 +26,15 @@ class Webtoon extends StatelessWidget {
               width: 250,
               clipBehavior: Clip.hardEdge,
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  boxShadow: [
-                    BoxShadow(
-                      blurRadius: 7,
-                      offset: const Offset(10, 10),
-                      color: Colors.black.withOpacity(0.6),
-                    )
-                  ]),
+                borderRadius: BorderRadius.circular(15),
+                boxShadow: [
+                  BoxShadow(
+                    blurRadius: 7,
+                    offset: const Offset(10, 10),
+                    color: Colors.black.withOpacity(0.6),
+                  ),
+                ],
+              ),
               child: Image.network(
                 webtoon.thumb,
                 headers: const {
@@ -51,7 +53,7 @@ class Webtoon extends StatelessWidget {
             fontSize: 22,
             fontWeight: FontWeight.w300,
           ),
-        )
+        ),
       ],
     );
   }
